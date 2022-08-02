@@ -14,6 +14,11 @@
 		F9C8010B2897F1C8000412BF /* Toss_cloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C8010A2897F1C8000412BF /* Toss_cloneTests.swift */; };
 		F9C801152897F1C8000412BF /* Toss_cloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C801142897F1C8000412BF /* Toss_cloneUITests.swift */; };
 		F9C801172897F1C8000412BF /* Toss_cloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C801162897F1C8000412BF /* Toss_cloneUITestsLaunchTests.swift */; };
+		F9C801242897F2ED000412BF /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C801232897F2ED000412BF /* LaunchScreenView.swift */; };
+		F9C801262897F792000412BF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C801252897F792000412BF /* MainView.swift */; };
+		F9C80128289800AD000412BF /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C80127289800AD000412BF /* extension.swift */; };
+		F9C8012B28980581000412BF /* TossBankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C8012A28980581000412BF /* TossBankView.swift */; };
+		F9C8012D28980C2E000412BF /* AssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C8012C28980C2E000412BF /* AssetsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		F9C801102897F1C8000412BF /* Toss_cloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Toss_cloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C801142897F1C8000412BF /* Toss_cloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toss_cloneUITests.swift; sourceTree = "<group>"; };
 		F9C801162897F1C8000412BF /* Toss_cloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toss_cloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F9C801232897F2ED000412BF /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		F9C801252897F792000412BF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F9C80127289800AD000412BF /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		F9C8012A28980581000412BF /* TossBankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TossBankView.swift; sourceTree = "<group>"; };
+		F9C8012C28980C2E000412BF /* AssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +104,9 @@
 		F9C800F82897F1C3000412BF /* Toss_clone */ = {
 			isa = PBXGroup;
 			children = (
+				F9C80127289800AD000412BF /* extension.swift */,
 				F9C800F92897F1C3000412BF /* Toss_cloneApp.swift */,
-				F9C800FB2897F1C3000412BF /* ContentView.swift */,
+				F9C8012928980500000412BF /* View */,
 				F9C800FD2897F1C7000412BF /* Assets.xcassets */,
 				F9C800FF2897F1C7000412BF /* Preview Content */,
 			);
@@ -125,6 +136,18 @@
 				F9C801162897F1C8000412BF /* Toss_cloneUITestsLaunchTests.swift */,
 			);
 			path = Toss_cloneUITests;
+			sourceTree = "<group>";
+		};
+		F9C8012928980500000412BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9C800FB2897F1C3000412BF /* ContentView.swift */,
+				F9C801252897F792000412BF /* MainView.swift */,
+				F9C801232897F2ED000412BF /* LaunchScreenView.swift */,
+				F9C8012A28980581000412BF /* TossBankView.swift */,
+				F9C8012C28980C2E000412BF /* AssetsView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9C800FC2897F1C3000412BF /* ContentView.swift in Sources */,
+				F9C801262897F792000412BF /* MainView.swift in Sources */,
+				F9C8012D28980C2E000412BF /* AssetsView.swift in Sources */,
 				F9C800FA2897F1C3000412BF /* Toss_cloneApp.swift in Sources */,
+				F9C80128289800AD000412BF /* extension.swift in Sources */,
+				F9C8012B28980581000412BF /* TossBankView.swift in Sources */,
+				F9C801242897F2ED000412BF /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

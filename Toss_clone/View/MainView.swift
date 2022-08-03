@@ -7,10 +7,20 @@
 
 import SwiftUI
 
+
+struct ViewOffsetKey: PreferenceKey {
+    typealias Value = CGFloat
+    static var defaultValue = CGFloat.zero
+    static func reduce(value: inout Value, nextValue: () -> Value) {
+        value += nextValue()
+    }
+}
+
 struct MainView: View {
     init() {
         UINavigationBar.appearance().barTintColor = UIColor(named: "BackgroundColor")
     }
+    @State var SectionOffset = -50.0
     var body: some View {
         VStack(){
             NavigationView{
@@ -18,10 +28,40 @@ struct MainView: View {
                     Color("BackgroundColor").ignoresSafeArea()
                     ScrollView{
                         VStack(spacing: 10){
-                            TossBankView()
-                            AssetsView()
+                            
+                            LazyVStack(spacing: 10, pinnedViews: .sectionFooters) {
+                                Section(footer: TossBankView().offset(y: SectionOffset)) {
+                                    TossBankView()
+                                    AssetsView()
+                                }
+                                AssetsView()
+                                AssetsView()
+                            }
+                            
+                            VStack{
+                                HStack{
+                                    Text("금액 숨기기")
+                                    Divider()
+                                    Text("자산 추가")
+                                }.frame(height: 20)
+                            }.frame(height: 180, alignment: .center)
+                        }.background(GeometryReader {
+                            Color.clear.preference(key: ViewOffsetKey.self,
+                                                   value: -$0.frame(in: .named("scroll")).origin.y)
+                        })
+                    }
+                    .onPreferenceChange(ViewOffsetKey.self) { if $0 > -50 {
+                        withAnimation{
+                            SectionOffset = 0
+                        }
+                    }else if $0 < 0 {
+                        withAnimation{
+                            SectionOffset = -50.0
                         }
                     }
+                        
+                    }
+                    
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {

@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+
+let AssetsValue = [AssetStruct(AssetName: "토스뱅크 통장", AssetImage: UIImage(named: "Logo")!, Amount: 71320, Goto: "1"),
+                   AssetStruct(AssetName: "또 토스뱅크 통장", AssetImage: UIImage(named: "Logo")!, Amount: 100000, Goto: "2"),
+                   AssetStruct(AssetName: "또 토스뱅크 통장", AssetImage: UIImage(named: "Logo")!, Amount: 100000, Goto: "2"),
+                   AssetStruct(AssetName: "또 토스뱅크 통장", AssetImage: UIImage(named: "Logo")!, Amount: 100000, Goto: "2"),
+                   AssetStruct(AssetName: "또 토스뱅크 통장", AssetImage: UIImage(named: "Logo")!, Amount: 100000, Goto: "2"),
+                   AssetStruct(AssetName: "또 토스뱅크 통장", AssetImage: UIImage(named: "Logo")!, Amount: 100000, Goto: "2"),
+                   AssetStruct(AssetName: "또 토스뱅크 통장", AssetImage: UIImage(named: "Logo")!, Amount: 100000, Goto: "2")]
+
+
+
+
 struct AssetStruct:Hashable {
     let AssetName:String
     let AssetImage:UIImage
@@ -16,7 +28,7 @@ struct AssetStruct:Hashable {
 
 
 struct AssetsView: View {
-    @State var Assests:[AssetStruct] = [AssetStruct(AssetName: "토스뱅크 통장", AssetImage: UIImage(named: "Logo")!, Amount: 71320, Goto: "1"),AssetStruct(AssetName: "또 토스뱅크 통장", AssetImage: UIImage(named: "Logo")!, Amount: 100000, Goto: "2")]
+    @State var Assests:[AssetStruct] = AssetsValue
     var body: some View {
         VStack(spacing: 5){
             HStack{
@@ -68,6 +80,7 @@ struct AssetsView: View {
                 }
                 
             }
+            
             
             
         }.frame(width: UIScreen.main.bounds.size.width - 20, alignment: .leading)

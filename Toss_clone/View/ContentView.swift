@@ -22,7 +22,7 @@ struct ContentView: View {
                             .imageScale(.large)
                         Text(item.content).font(.system(size: 10, weight: .light))
                     }.frame(height: 70)
-                        .padding(.bottom, 20)
+                        .padding(.bottom, 25)
                         .foregroundColor(self.selectedTab == item.tag ? Color.black : Color.gray)
                 }
                 Spacer()
@@ -30,6 +30,10 @@ struct ContentView: View {
         }
         .background(Color.white)
         .cornerRadius(25, corners: [.topLeft, .topRight])
+        .overlay(
+                    RoundedRectangle(cornerRadius: 25)
+                        .stroke(Color.gray, lineWidth: 0.1)
+                )
         .offset(y:UIScreen.main.bounds.size.height/2 - 40)
     }
     
@@ -65,8 +69,6 @@ struct ContentView: View {
                     }
                 }
             }
-            
-            
             TapBar()
         }
         

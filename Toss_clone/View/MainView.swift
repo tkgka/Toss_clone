@@ -50,11 +50,11 @@ struct MainView: View {
                                                    value: -$0.frame(in: .named("scroll")).origin.y)
                         })
                     }
-                    .onPreferenceChange(ViewOffsetKey.self) { if $0 > -50 {
+                    .onPreferenceChange(ViewOffsetKey.self) { if $0 > CGFloat(-13 * AssetsValue.count) {
                         withAnimation{
                             SectionOffset = 0
                         }
-                    }else if $0 < 0 {
+                    }else if $0 < CGFloat(-13 * AssetsValue.count) {
                         withAnimation{
                             SectionOffset = -50.0
                         }

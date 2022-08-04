@@ -42,7 +42,7 @@ struct RoundedCorner: Shape {
 }
 
 
-// to enable swipe back jesture with out enable navbar
+// to enable swipe back gesture with out enable navbar
 extension UINavigationController: UIGestureRecognizerDelegate {
     override open func viewDidLoad() {
         super.viewDidLoad()

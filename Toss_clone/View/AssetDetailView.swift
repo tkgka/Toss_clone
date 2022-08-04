@@ -1,5 +1,5 @@
 //
-//  SendView.swift
+//  AssetDetailView.swift
 //  Toss_clone
 //
 //  Created by 김수환 on 2022/08/04.
@@ -7,17 +7,19 @@
 
 import SwiftUI
 
-struct SendView: View {
-    var bank:String?
+struct AssetDetailView: View {
+    @State var Bank:String
+    @State var Amount:Int
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView{
             ZStack{
                 Color("BackgroundColor").ignoresSafeArea()
                 VStack{
-                    Text(bank ?? "송금")
-                }.frame(alignment: .center)
-            } .toolbar{
+                    Text(Bank)
+                    Text("\(Amount) 원").font(.headline)
+                }
+            }.toolbar{
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
@@ -32,8 +34,8 @@ struct SendView: View {
     }
 }
 
-struct SendView_Previews: PreviewProvider {
-    static var previews: some View {
-        SendView()
-    }
-}
+//struct AssetDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AssetDetailView()
+//    }
+//}

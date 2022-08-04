@@ -16,11 +16,15 @@ struct ViewOffsetKey: PreferenceKey {
     }
 }
 
-struct MainView: View {
+struct MainView: View { 
     init() {
         UINavigationBar.appearance().barTintColor = UIColor(named: "BackgroundColor")
     }
-    @State var SectionOffset = -50.0
+    
+    
+    @ObservedObject var ObserbData = ObsbData
+    @State var SectionOffset = 0.0
+    let cellHeight:CGFloat = 76
     var body: some View {
         VStack(){
             NavigationView{
@@ -30,14 +34,17 @@ struct MainView: View {
                         VStack(spacing: 10){
                             
                             LazyVStack(spacing: 10, pinnedViews: .sectionFooters) {
-                                Section(footer: TossBankView().offset(y: SectionOffset)) {
+                                Section(footer: SpendView().offset(y: SectionOffset)) {
                                     TossBankView()
-                                    AssetsView()
+                                    AssetsView().background(GeometryReader {
+                                        Color.clear.preference(key: ViewOffsetKey.self,
+                                                               value: -$0.frame(in: .named("scroll")).origin.y)
+                                    })
                                 }
-                                AssetsView()
-                                AssetsView()
+                                TossBankView()
+                                TossBankView()
+                                TossBankView()
                             }
-                            
                             VStack{
                                 HStack{
                                     Text("금액 숨기기")
@@ -45,20 +52,20 @@ struct MainView: View {
                                     Text("자산 추가")
                                 }.frame(height: 20)
                             }.frame(height: 180, alignment: .center)
-                        }.background(GeometryReader {
-                            Color.clear.preference(key: ViewOffsetKey.self,
-                                                   value: -$0.frame(in: .named("scroll")).origin.y)
-                        })
-                    }
-                    .onPreferenceChange(ViewOffsetKey.self) { if $0 > CGFloat(-13 * AssetsValue.count) {
-                        withAnimation{
-                            SectionOffset = 0
-                        }
-                    }else if $0 < CGFloat(-13 * AssetsValue.count) {
-                        withAnimation{
-                            SectionOffset = -50.0
                         }
                     }
+                    .onPreferenceChange(ViewOffsetKey.self) {
+                        let cellLocation = (CGFloat(AssetsValue.count) + 3.0) * cellHeight - UIScreen.main.bounds.size.height 
+                        if $0 < CGFloat(cellLocation + cellHeight / 2) {
+                            withAnimation{
+                                ObserbData.LazyViewIsEnd = false
+                            }
+                        }
+                        else if $0 > CGFloat(cellLocation) {
+                            withAnimation{
+                                ObserbData.LazyViewIsEnd = true
+                            }
+                        }
                         
                     }
                     

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		F95E8367289A777200F59300 /* TapbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E8366289A777200F59300 /* TapbarController.swift */; };
+		F95E836B289AA19B00F59300 /* SpendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E836A289AA19B00F59300 /* SpendView.swift */; };
+		F95E836D289AA20B00F59300 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E836C289AA20B00F59300 /* Assets.swift */; };
+		F95E836F289AA29200F59300 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95E836E289AA29200F59300 /* TabBarView.swift */; };
+		F9953B69289BE8640003FAA1 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9953B68289BE8640003FAA1 /* SendView.swift */; };
 		F9C800FA2897F1C3000412BF /* Toss_cloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C800F92897F1C3000412BF /* Toss_cloneApp.swift */; };
 		F9C800FC2897F1C3000412BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C800FB2897F1C3000412BF /* ContentView.swift */; };
 		F9C800FE2897F1C7000412BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C800FD2897F1C7000412BF /* Assets.xcassets */; };
@@ -41,6 +45,10 @@
 
 /* Begin PBXFileReference section */
 		F95E8366289A777200F59300 /* TapbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapbarController.swift; sourceTree = "<group>"; };
+		F95E836A289AA19B00F59300 /* SpendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendView.swift; sourceTree = "<group>"; };
+		F95E836C289AA20B00F59300 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		F95E836E289AA29200F59300 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		F9953B68289BE8640003FAA1 /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
 		F9C800F62897F1C3000412BF /* Toss_clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toss_clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C800F92897F1C3000412BF /* Toss_cloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toss_cloneApp.swift; sourceTree = "<group>"; };
 		F9C800FB2897F1C3000412BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 			children = (
 				F9C80127289800AD000412BF /* extension.swift */,
 				F9C800F92897F1C3000412BF /* Toss_cloneApp.swift */,
+				F95E836C289AA20B00F59300 /* Assets.swift */,
 				F9C8012928980500000412BF /* View */,
 				F9C800FD2897F1C7000412BF /* Assets.xcassets */,
 				F9C800FF2897F1C7000412BF /* Preview Content */,
@@ -144,10 +153,13 @@
 			isa = PBXGroup;
 			children = (
 				F9C800FB2897F1C3000412BF /* ContentView.swift */,
+				F95E836E289AA29200F59300 /* TabBarView.swift */,
 				F95E8366289A777200F59300 /* TapbarController.swift */,
 				F9C801252897F792000412BF /* MainView.swift */,
 				F9C801232897F2ED000412BF /* LaunchScreenView.swift */,
 				F9C8012A28980581000412BF /* TossBankView.swift */,
+				F95E836A289AA19B00F59300 /* SpendView.swift */,
+				F9953B68289BE8640003FAA1 /* SendView.swift */,
 				F9C8012C28980C2E000412BF /* AssetsView.swift */,
 			);
 			path = View;
@@ -284,12 +296,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9C800FC2897F1C3000412BF /* ContentView.swift in Sources */,
+				F95E836F289AA29200F59300 /* TabBarView.swift in Sources */,
+				F9953B69289BE8640003FAA1 /* SendView.swift in Sources */,
 				F9C801262897F792000412BF /* MainView.swift in Sources */,
 				F9C8012D28980C2E000412BF /* AssetsView.swift in Sources */,
 				F9C800FA2897F1C3000412BF /* Toss_cloneApp.swift in Sources */,
 				F9C80128289800AD000412BF /* extension.swift in Sources */,
 				F9C8012B28980581000412BF /* TossBankView.swift in Sources */,
+				F95E836B289AA19B00F59300 /* SpendView.swift in Sources */,
 				F9C801242897F2ED000412BF /* LaunchScreenView.swift in Sources */,
+				F95E836D289AA20B00F59300 /* Assets.swift in Sources */,
 				F95E8367289A777200F59300 /* TapbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

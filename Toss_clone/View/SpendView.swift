@@ -37,6 +37,7 @@ struct SpendTopView: View {
 }
 
 struct SpendBottomView:View {
+    @ObservedObject var ObserbData = ObsbData
     var body: some View {
         VStack{
             HStack{
@@ -44,7 +45,7 @@ struct SpendBottomView:View {
                     .padding()
                 Spacer()
             }
-        }.frame(width: UIScreen.main.bounds.size.width - 30, alignment: .leading)
+        }.frame(width: ObserbData.LazyViewIsEnd == false ? UIScreen.main.bounds.size.width : UIScreen.main.bounds.size.width - 30, alignment: .leading)
             .foregroundColor(.black)
             .background(Color.white)
             .cornerRadius(16, corners: [.bottomLeft, .bottomRight])

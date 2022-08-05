@@ -40,7 +40,7 @@ struct AssetsView: View {
                                     Spacer()
                                 }
                             }
-                        }.padding([.vertical], 10)
+                        }.padding([.vertical], defaultPadding)
                     }
                     .background(Color.white)
                     .cornerRadius(defaultCornerRadious)
@@ -50,7 +50,7 @@ struct AssetsView: View {
                         Text("송금")
                             .font(.system(size: 15))
                             .padding([.horizontal], 15)
-                            .padding([.vertical], 10)
+                            .padding([.vertical], defaultPadding)
                     }.background(Color("BackgroundColor"))
                         .cornerRadius(5)
                         .padding(.trailing, 20)

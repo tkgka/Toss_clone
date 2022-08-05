@@ -26,7 +26,7 @@ let AssetsValue = [AssetStruct(AssetName: "토스뱅크 통장", AssetImage: UII
 
 let cellPadding:CGFloat = 30
 let defaultCornerRadious:CGFloat = 16
-
+let defaultPadding:CGFloat = 10
 
 struct ListSelectionStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {

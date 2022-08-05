@@ -31,12 +31,12 @@ struct MainView: View {
                 ZStack{
                     Color("BackgroundColor").ignoresSafeArea()
                     ScrollView{
-                        VStack(spacing: 10){
+                        VStack(spacing: defaultPadding){
                             
                             LazyVStack(spacing: 0, pinnedViews: .sectionFooters) {
-                                Section(footer: SpendTopView().padding(.top, 10)) {
-                                    TossBankView().padding(.top, 10)
-                                    AssetsView().padding(.top, 10)
+                                Section(footer: SpendTopView().padding(.top, defaultPadding)) {
+                                    TossBankView().padding(.top, defaultPadding)
+                                    AssetsView().padding(.top, defaultPadding)
                                         .background(GeometryReader {
                                         Color.clear.preference(key: ViewOffsetKey.self,
                                                                value: -$0.frame(in: .named("scroll")).origin.y)

@@ -24,13 +24,13 @@ struct SpendTopView: View {
             }else {
                 Divider().frame(height: 55, alignment: .top)
             }
-        }.frame(width: ObserbData.LazyViewIsEnd == false ? UIScreen.main.bounds.size.width : UIScreen.main.bounds.size.width - 30, alignment: .leading)
+        }.frame(width: ObserbData.LazyViewIsEnd == false ? UIScreen.main.bounds.size.width : UIScreen.main.bounds.size.width - cellPadding, alignment: .leading)
             .foregroundColor(.black)
             .background(Color.white)
-            .cornerRadius(16, corners: [.topLeft, .topRight])
+            .cornerRadius(defaultCornerRadious, corners: [.topLeft, .topRight])
             .overlay(
                 ObserbData.LazyViewIsEnd == false ?
-                (RoundedRectangle(cornerRadius: 16)
+                (RoundedRectangle(cornerRadius: defaultCornerRadious)
                     .stroke(Color.gray, lineWidth: 0.1)) : nil
             )
     }
@@ -45,10 +45,10 @@ struct SpendBottomView:View {
                     .padding()
                 Spacer()
             }
-        }.frame(width: ObserbData.LazyViewIsEnd == false ? UIScreen.main.bounds.size.width : UIScreen.main.bounds.size.width - 30, alignment: .leading)
+        }.frame(width: ObserbData.LazyViewIsEnd == false ? UIScreen.main.bounds.size.width : UIScreen.main.bounds.size.width - cellPadding, alignment: .leading)
             .foregroundColor(.black)
             .background(Color.white)
-            .cornerRadius(16, corners: [.bottomLeft, .bottomRight])
+            .cornerRadius(defaultCornerRadious, corners: [.bottomLeft, .bottomRight])
     }
 }
 

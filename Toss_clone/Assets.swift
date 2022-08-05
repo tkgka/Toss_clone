@@ -24,3 +24,13 @@ let AssetsValue = [AssetStruct(AssetName: "토스뱅크 통장", AssetImage: UII
                    AssetStruct(AssetName: "KB 국민 은행 통장", AssetImage: UIImage(named: "KB"), BGColor: Color.gray, Amount: 700000, Goto: "7")]
 
 
+let cellPadding:CGFloat = 30
+let defaultCornerRadious:CGFloat = 16
+
+
+struct ListSelectionStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .background(configuration.isPressed ? Color.gray.opacity(0.3) : Color.clear)
+    }
+}

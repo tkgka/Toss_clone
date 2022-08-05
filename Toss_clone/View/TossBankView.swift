@@ -16,10 +16,10 @@ struct TossBankView: View {
                 Image(systemName: "chevron.right")
                     .padding(.trailing, 20)
             
-        }.frame(width: UIScreen.main.bounds.size.width - 30, alignment: .leading)
+        }.frame(width: UIScreen.main.bounds.size.width - cellPadding, alignment: .leading)
             .foregroundColor(.black)
             .background(Color.white)
-            .cornerRadius(16)
+            .cornerRadius(defaultCornerRadious)
     }
 }
 

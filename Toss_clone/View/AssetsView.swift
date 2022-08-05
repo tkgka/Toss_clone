@@ -40,9 +40,11 @@ struct AssetsView: View {
                                     Spacer()
                                 }
                             }
-                        }.padding(.bottom, 20)
+                        }.padding([.vertical], 10)
                     }
-                    
+                    .background(Color.white)
+                    .cornerRadius(defaultCornerRadious)
+                    .buttonStyle(ListSelectionStyle())
                     NavigationLink( destination: SendView(bank: asset.AssetName).navigationBarHidden(true))
                     {
                         Text("송금")
@@ -53,17 +55,17 @@ struct AssetsView: View {
                         .cornerRadius(5)
                         .padding(.trailing, 20)
                         .frame(alignment: .center)
-                        .offset(x: UIScreen.main.bounds.size.width/2.7, y: -10)
+                        .offset(x: UIScreen.main.bounds.size.width/2.7)
                 }
                 
             }
             
             
             
-        }.frame(width: UIScreen.main.bounds.size.width - 30, alignment: .leading)
+        }.frame(width: UIScreen.main.bounds.size.width - cellPadding, alignment: .leading)
             .foregroundColor(.black)
             .background(Color.white)
-            .cornerRadius(16)
+            .cornerRadius(defaultCornerRadious)
     }
 }
 
@@ -72,3 +74,7 @@ struct AssetsView_Previews: PreviewProvider {
         AssetsView()
     }
 }
+
+
+
+

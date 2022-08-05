@@ -33,18 +33,21 @@ struct MainView: View {
                     ScrollView{
                         VStack(spacing: 10){
                             
-                            LazyVStack(spacing: 10, pinnedViews: .sectionFooters) {
-                                Section(footer: SpendView().offset(y: SectionOffset)) {
-                                    TossBankView()
-                                    AssetsView().background(GeometryReader {
+                            LazyVStack(spacing: 0, pinnedViews: .sectionFooters) {
+                                Section(footer: SpendTopView().padding(.top, 10)) {
+                                    TossBankView().padding(.top, 10)
+                                    AssetsView().padding(.top, 10)
+                                        .background(GeometryReader {
                                         Color.clear.preference(key: ViewOffsetKey.self,
                                                                value: -$0.frame(in: .named("scroll")).origin.y)
                                     })
                                 }
-                                TossBankView()
-                                TossBankView()
-                                TossBankView()
+                                SpendBottomView()
                             }
+                            TossBankView()
+                            TossBankView()
+                            TossBankView()
+                            
                             VStack{
                                 HStack{
                                     Text("금액 숨기기")
@@ -55,13 +58,13 @@ struct MainView: View {
                         }
                     }
                     .onPreferenceChange(ViewOffsetKey.self) {
-                        let cellLocation = (CGFloat(AssetsValue.count) + 3.0) * cellHeight - UIScreen.main.bounds.size.height 
-                        if $0 < CGFloat(cellLocation + cellHeight / 2) {
+                        let cellLocation = (CGFloat(AssetsValue.count) + 3.0) * cellHeight - UIScreen.main.bounds.size.height
+                        if $0 < CGFloat(cellLocation + cellHeight / 3) {
                             withAnimation{
                                 ObserbData.LazyViewIsEnd = false
                             }
                         }
-                        else if $0 > CGFloat(cellLocation) {
+                        else if $0 > CGFloat(cellLocation + cellHeight / 3) {
                             withAnimation{
                                 ObserbData.LazyViewIsEnd = true
                             }

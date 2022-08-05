@@ -24,7 +24,7 @@ struct AssetDetailView: View {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Image(systemName: "xmark")
+                        Image(systemName: "chevron.left")
                             .imageScale(.large)
                             .padding()
                     }).accentColor(.black)

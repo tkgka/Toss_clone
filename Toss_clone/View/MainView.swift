@@ -8,13 +8,7 @@
 import SwiftUI
 
 
-struct ViewOffsetKey: PreferenceKey {
-    typealias Value = CGFloat
-    static var defaultValue = CGFloat.zero
-    static func reduce(value: inout Value, nextValue: () -> Value) {
-        value += nextValue()
-    }
-}
+
 
 struct MainView: View { 
     init() {
@@ -25,7 +19,7 @@ struct MainView: View {
     @ObservedObject var ObserbData = ObsbData
     @State var SectionOffset = 0.0
     var body: some View {
-        VStack(){
+        VStack{
             NavigationView{
                 ZStack{
                     Color("BackgroundColor").ignoresSafeArea()
@@ -70,6 +64,7 @@ struct MainView: View {
                     }
                     
                 }
+
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         HStack{
@@ -96,6 +91,7 @@ struct MainView: View {
             }
             
         }
+
     }
 }
 

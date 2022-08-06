@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class ObserveData:ObservableObject {
-    @Published var  LazyViewIsEnd = false
+    @Published var LazyViewIsEnd = false
 }
 
 let ObsbData = ObserveData()

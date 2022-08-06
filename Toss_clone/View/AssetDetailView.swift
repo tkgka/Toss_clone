@@ -25,7 +25,7 @@ struct AssetDetailView: View {
                         Spacer()
                         Button(action: {}){
                             Text("채우기").foregroundColor(Color.blue)
-                                .frame(width: UIScreen.main.bounds.size.width/2.2, height: 50, alignment: .center).background(Color("BtnColor2")).cornerRadius(defaultCornerRadious)
+                                .frame(width: UIScreen.main.bounds.size.width/2.2, height: 50, alignment: .center).background(Color("BtnColor")).cornerRadius(defaultCornerRadious)
                         }
                         Spacer()
                         Button(action: {}){
@@ -49,7 +49,7 @@ struct AssetDetailView: View {
                         Text("XXXX.x ~ XXXX.x 까지 조회했어요")
                         Button(action: {}){
                             Text("이전 내역 더보기").foregroundColor(Color.blue)
-                                .frame(width: UIScreen.main.bounds.size.width/2.7, height: 45, alignment: .center).background(Color("BtnColor2")).cornerRadius(defaultCornerRadious)
+                                .frame(width: UIScreen.main.bounds.size.width/2.7, height: 45, alignment: .center).background(Color("BtnColor")).cornerRadius(defaultCornerRadious)
                         }
                     }.frame(alignment: .center)
                     

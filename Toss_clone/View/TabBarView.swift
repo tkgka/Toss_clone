@@ -3,7 +3,7 @@ struct TabBar: View {
     @ObservedObject var ObserbData = ObsbData
     @Binding var selectedTab: String
     var body: some View {
-        return HStack{
+        HStack{
             ForEach(TabBarList) { item in
                 Spacer()
                 Button(action: {

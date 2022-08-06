@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {    
     @State var selectedTab = "house"
     @State var isLoading: Bool = true
+    @ObservedObject var ObserbData = ObsbData
     init() {
         UITabBar.appearance().backgroundColor = UIColor.gray
         UITabBar.appearance().isHidden = true
@@ -36,7 +37,8 @@ struct ContentView: View {
                     }
                 }
             }
-            TabBar(selectedTab: $selectedTab)
+                TabBar(selectedTab: $selectedTab)
+            
         }
         
         .onAppear {

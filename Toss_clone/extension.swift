@@ -8,8 +8,6 @@
 import Foundation
 import SwiftUI
 
-
-
 extension UINavigationBar {
     static func changeAppearance(clear: Bool) {
         let appearance = UINavigationBarAppearance()

@@ -13,10 +13,10 @@ struct AssetsView: View {
     var body: some View {
         VStack(spacing: 5){
             HStack{
-                Text("자산").font(.system(size: 20, weight: .black))
+                Text("자산").font(.system(size: 20, weight: .black)).foregroundColor(Color("FontColor"))
                     .padding()
                 Spacer()
-                Image(systemName: "chevron.right")
+                Image(systemName: "chevron.right").foregroundColor(Color("FontColor"))
                     .padding(.trailing, 20)
             }
             
@@ -36,22 +36,21 @@ struct AssetsView: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text("\(asset.Amount) 원").font(.headline)
+                                    Text("\(asset.Amount) 원").font(.headline).foregroundColor(Color("FontColor"))
                                     Spacer()
                                 }
                             }
                         }.padding([.vertical], defaultPadding)
                     }
-                    .background(Color.white)
                     .cornerRadius(defaultCornerRadious)
                     .buttonStyle(ListSelectionStyle())
                     NavigationLink( destination: SendView(bank: asset.AssetName).navigationBarHidden(true))
                     {
-                        Text("송금")
+                        Text("송금").foregroundColor(Color("FontColor"))
                             .font(.system(size: 15))
                             .padding([.horizontal], 15)
                             .padding([.vertical], defaultPadding)
-                    }.background(Color("BackgroundColor"))
+                    }.background(Color("BtnColor"))
                         .cornerRadius(5)
                         .padding(.trailing, 20)
                         .frame(alignment: .center)
@@ -64,7 +63,7 @@ struct AssetsView: View {
             
         }.frame(width: UIScreen.main.bounds.size.width - cellPadding, alignment: .leading)
             .foregroundColor(.black)
-            .background(Color.white)
+            .background(Color("CellColor"))
             .cornerRadius(defaultCornerRadious)
     }
 }

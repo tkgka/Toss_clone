@@ -27,10 +27,11 @@ let AssetsValue = [AssetStruct(AssetName: "토스뱅크 통장", AssetImage: UII
 let cellPadding:CGFloat = 30
 let defaultCornerRadious:CGFloat = 16
 let defaultPadding:CGFloat = 10
+let cellHeight:CGFloat = 76
+
 
 struct ListSelectionStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .background(configuration.isPressed ? Color.gray.opacity(0.3) : Color.clear)
+        configuration.label.frame(width: configuration.isPressed ? UIScreen.main.bounds.size.width - cellPadding - 10 : UIScreen.main.bounds.size.width - cellPadding, height: cellHeight).background(configuration.isPressed ? Color.gray.opacity(0.3) : Color("CellColor"))
     }
 }

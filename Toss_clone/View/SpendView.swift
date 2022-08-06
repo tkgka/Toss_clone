@@ -12,7 +12,7 @@ struct SpendTopView: View {
     var body: some View {
         VStack{
             HStack{
-                Text("소비").font(.system(size: 20, weight: .black))
+                Text("소비").font(.system(size: 20, weight: .black)).foregroundColor(Color("FontColor"))
                     .padding()
                 Spacer()
             }
@@ -21,12 +21,12 @@ struct SpendTopView: View {
                 Text("!@#")
                 Text("!@#")
                 Text("!@#")
-            }else {
-                Divider().frame(height: 55, alignment: .top)
             }
+            Divider().frame(width:UIScreen.main.bounds.size.width - cellPadding, height:  ObserbData.LazyViewIsEnd == false ? 55 : nil, alignment: .top)
+            
         }.frame(width: ObserbData.LazyViewIsEnd == false ? UIScreen.main.bounds.size.width : UIScreen.main.bounds.size.width - cellPadding, alignment: .leading)
             .foregroundColor(.black)
-            .background(Color.white)
+            .background(Color("CellColor"))
             .cornerRadius(defaultCornerRadious, corners: [.topLeft, .topRight])
             .overlay(
                 ObserbData.LazyViewIsEnd == false ?
@@ -41,13 +41,13 @@ struct SpendBottomView:View {
     var body: some View {
         VStack{
             HStack{
-                Text("소비").font(.system(size: 20, weight: .black))
+                Text("소비").font(.system(size: 20, weight: .black)).foregroundColor(Color("FontColor"))
                     .padding()
                 Spacer()
             }
         }.frame(width: ObserbData.LazyViewIsEnd == false ? UIScreen.main.bounds.size.width : UIScreen.main.bounds.size.width - cellPadding, alignment: .leading)
             .foregroundColor(.black)
-            .background(Color.white)
+            .background(Color("CellColor"))
             .cornerRadius(defaultCornerRadious, corners: [.bottomLeft, .bottomRight])
     }
 }

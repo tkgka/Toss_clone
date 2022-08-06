@@ -12,7 +12,7 @@ struct TabBar: View {
                     VStack {
                         Image(systemName: selectedTab == item.tag ? item.iconTapped : item.icon)
                             .imageScale(.large)
-                        Text(item.content).font(.system(size: 10, weight: .light))
+                        Text(item.content).font(.system(size: 10, weight: .light)).foregroundColor(Color("FontColor"))
                     }.frame(height: 70)
                         .padding(.bottom, 25)
                         .foregroundColor(selectedTab == item.tag ? Color.black : Color.gray)
@@ -20,7 +20,7 @@ struct TabBar: View {
                 Spacer()
             }
         }
-        .background(Color.white)
+        .background(Color("CellColor"))
         .cornerRadius(25, corners: [.topLeft, .topRight])
         .overlay(
             ObserbData.LazyViewIsEnd == true ?

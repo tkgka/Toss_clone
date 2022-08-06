@@ -24,7 +24,6 @@ struct MainView: View {
     
     @ObservedObject var ObserbData = ObsbData
     @State var SectionOffset = 0.0
-    let cellHeight:CGFloat = 76
     var body: some View {
         VStack(){
             NavigationView{
@@ -50,21 +49,21 @@ struct MainView: View {
                             
                             VStack{
                                 HStack{
-                                    Text("금액 숨기기")
+                                    Text("금액 숨기기").foregroundColor(Color("FontColor"))
                                     Divider()
-                                    Text("자산 추가")
+                                    Text("자산 추가").foregroundColor(Color("FontColor"))
                                 }.frame(height: 20)
                             }.frame(height: 180, alignment: .center)
                         }
                     }
                     .onPreferenceChange(ViewOffsetKey.self) {
                         let cellLocation = (CGFloat(AssetsValue.count) + 3.0) * cellHeight - UIScreen.main.bounds.size.height
-                        if $0 < CGFloat(cellLocation + cellHeight / 3) {
+                        if $0 < CGFloat(cellLocation + cellHeight) {
                             withAnimation{
                                 ObserbData.LazyViewIsEnd = false
                             }
                         }
-                        else if $0 > CGFloat(cellLocation + cellHeight / 3) {
+                        else if $0 > CGFloat(cellLocation + cellHeight) {
                             withAnimation{
                                 ObserbData.LazyViewIsEnd = true
                             }

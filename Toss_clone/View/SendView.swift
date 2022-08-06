@@ -15,14 +15,14 @@ struct SendView: View {
             ZStack{
                 Color("BackgroundColor").ignoresSafeArea()
                 VStack{
-                    Text(bank ?? "송금")
+                    Text(bank ?? "송금").foregroundColor(Color("FontColor"))
                 }.frame(alignment: .center)
             } .toolbar{
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Image(systemName: "chevron.left")
+                        Image(systemName: "chevron.left").foregroundColor(Color("FontColor"))
                             .imageScale(.large)
                             .padding()
                     }).accentColor(.black)

@@ -86,7 +86,7 @@ struct MainView: View {
                             .foregroundColor(.gray)
                         
                     }
-                }
+                }.navigationBarTitleDisplayMode(.inline)
                 
             }
             

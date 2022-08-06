@@ -14,8 +14,6 @@ struct MainView: View {
     init() {
         UINavigationBar.appearance().barTintColor = UIColor(named: "BackgroundColor")
     }
-    
-    
     @ObservedObject var ObserbData = ObsbData
     @State var SectionOffset = 0.0
     var body: some View {
@@ -25,7 +23,6 @@ struct MainView: View {
                     Color("BackgroundColor").ignoresSafeArea()
                     ScrollView{
                         VStack(spacing: defaultPadding){
-                            
                             LazyVStack(spacing: 0, pinnedViews: .sectionFooters) {
                                 Section(footer: SpendTopView().padding(.top, defaultPadding)) {
                                     TossBankView().padding(.top, defaultPadding)
@@ -62,7 +59,7 @@ struct MainView: View {
                         }
                         
                     }
-                    
+                    TabBar()
                 }
 
                 .toolbar {

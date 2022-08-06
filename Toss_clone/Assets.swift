@@ -10,6 +10,7 @@ import SwiftUI
 
 class ObserveData:ObservableObject {
     @Published var LazyViewIsEnd = false
+    @Published var selectedTab = "house"
 }
 
 let ObsbData = ObserveData()

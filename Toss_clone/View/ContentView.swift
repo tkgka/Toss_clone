@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {    
-    @State var selectedTab = "house"
     @State var isLoading: Bool = true
     @ObservedObject var ObserbData = ObsbData
+    
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.gray
         UITabBar.appearance().isHidden = true
         
     }
@@ -27,7 +26,7 @@ struct ContentView: View {
             }
             else {
                 // App Screen
-                TabView(selection: $selectedTab){
+                TabView(selection: $ObserbData.selectedTab){
                     ForEach(TabBarList){
                         item in
                         AnyView(_fromValue: item.page)
@@ -37,8 +36,6 @@ struct ContentView: View {
                     }
                 }
             }
-                TabBar(selectedTab: $selectedTab)
-            
         }
         
         .onAppear {

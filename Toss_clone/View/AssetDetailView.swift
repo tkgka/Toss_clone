@@ -25,10 +25,11 @@ struct AssetDetailView: View {
                         Spacer()
                         Button(action: {}){
                             Text("채우기").foregroundColor(Color.blue)
-                                .frame(width: UIScreen.main.bounds.size.width/2.2, height: 50, alignment: .center).background(Color("BtnColor")).cornerRadius(defaultCornerRadious)
+                                .frame(width: UIScreen.main.bounds.size.width/2.2, height: 50, alignment: .center).background(Color("BtnColor2")).cornerRadius(defaultCornerRadious)
                         }
                         Spacer()
-                        Button(action: {}){
+                        NavigationLink( destination: SendView(bank: Bank).navigationBarHidden(true))
+                        {
                             Text("보내기").foregroundColor(Color.white)
                                 .frame(width: UIScreen.main.bounds.size.width/2.2, height: 50, alignment: .center)
                                 .background(Color.blue).cornerRadius(defaultCornerRadious)

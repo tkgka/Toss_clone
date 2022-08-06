@@ -30,12 +30,6 @@ struct SendView: View {
                                 .padding(.leading, 16)
                                 .padding(.trailing, 16)
                         }
-                        Text("asd")
-                        Text("asd")
-                        Text("asd")
-                        Text("asd")
-                        Text("asd")
-                        
                     }
                 }
                 .toolbar{
@@ -50,6 +44,9 @@ struct SendView: View {
                             }).accentColor(.black)
                         }
                     }
+                }.navigationBarTitleDisplayMode(.inline)
+                if bank == nil {
+                    TabBar()
                 }
             }
         }

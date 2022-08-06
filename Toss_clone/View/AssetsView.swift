@@ -12,13 +12,19 @@ struct AssetsView: View {
     @State var Assests:[AssetStruct] = AssetsValue
     var body: some View {
         VStack(spacing: 5){
-            HStack{
-                Text("자산").font(.system(size: 20, weight: .black)).foregroundColor(Color("FontColor"))
-                    .padding()
-                Spacer()
-                Image(systemName: "chevron.right").foregroundColor(Color("FontColor"))
-                    .padding(.trailing, 20)
+            NavigationLink( destination: LaunchScreenView().navigationBarHidden(true)){
+                HStack{
+                    Text("자산").font(.system(size: 20, weight: .black)).foregroundColor(Color("FontColor"))
+                        .padding()
+                    Spacer()
+                    Image(systemName: "chevron.right").foregroundColor(Color("FontColor"))
+                        .padding(.trailing, 20)
+                }
             }
+            .cornerRadius(defaultCornerRadious, corners: [.topLeft, .topRight])
+            .buttonStyle(ListStyle())
+            
+            
             
             ForEach(Assests, id: \.self) { asset in
                 ZStack{
@@ -43,7 +49,7 @@ struct AssetsView: View {
                         }.padding([.vertical], defaultPadding)
                     }
                     .cornerRadius(defaultCornerRadious)
-                    .buttonStyle(ListSelectionStyle())
+                    .buttonStyle(CellStyle())
                     NavigationLink( destination: SendView(bank: asset.AssetName).navigationBarHidden(true))
                     {
                         Text("송금").foregroundColor(Color("FontColor"))
@@ -73,7 +79,4 @@ struct AssetsView_Previews: PreviewProvider {
         AssetsView()
     }
 }
-
-
-
 

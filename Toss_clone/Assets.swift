@@ -30,8 +30,15 @@ let defaultPadding:CGFloat = 10
 let cellHeight:CGFloat = 76
 
 
-struct ListSelectionStyle: ButtonStyle {
+struct CellStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label.frame(width: configuration.isPressed ? UIScreen.main.bounds.size.width - cellPadding - 10 : UIScreen.main.bounds.size.width - cellPadding, height: cellHeight).background(configuration.isPressed ? Color.gray.opacity(0.3) : Color("CellColor"))
+    }
+}
+
+
+struct ListStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label.frame(width: configuration.isPressed ? UIScreen.main.bounds.size.width - cellPadding - 10 : UIScreen.main.bounds.size.width - cellPadding, height: 50).background(configuration.isPressed ? Color.gray.opacity(0.3) : Color("CellColor"))
     }
 }

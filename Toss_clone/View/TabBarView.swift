@@ -15,7 +15,7 @@ struct TabBar: View {
                         Text(item.content).font(.system(size: 10, weight: .light)).foregroundColor(Color("FontColor"))
                     }.frame(height: 70)
                         .padding(.bottom, 25)
-                        .foregroundColor(selectedTab == item.tag ? Color.black : Color.gray)
+                        .foregroundColor(selectedTab == item.tag ? Color("BlackNWhiteColor") : Color.gray)
                 }
                 Spacer()
             }

@@ -47,7 +47,7 @@ struct SpendTopView: View {
                     .frame(alignment: .center)
                     .offset(x: UIScreen.main.bounds.size.width/2.7, y: ObserbData.LazyViewIsEnd == false ? -50.0 : 0)
             }
-            Divider().frame(width:UIScreen.main.bounds.size.width - cellPadding, height:  ObserbData.LazyViewIsEnd == false ? 25 : nil, alignment: .top)
+            Divider().frame(width:UIScreen.main.bounds.size.width - cellPadding, height:  ObserbData.LazyViewIsEnd == false ? 30 : nil, alignment: .top)
                 .offset(y: ObserbData.LazyViewIsEnd == false ? -50.0 : 0)
             
         }.frame(width: ObserbData.LazyViewIsEnd == false ? UIScreen.main.bounds.size.width : UIScreen.main.bounds.size.width - cellPadding, alignment: .leading)

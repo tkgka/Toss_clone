@@ -37,23 +37,21 @@ struct MainView: View {
                                     TossBankView().padding(.top, defaultPadding)
                                     AssetsView().padding(.top, defaultPadding)
                                         .background(GeometryReader {
-                                        Color.clear.preference(key: ViewOffsetKey.self,
-                                                               value: -$0.frame(in: .named("scroll")).origin.y)
-                                    })
+                                            Color.clear.preference(key: ViewOffsetKey.self,
+                                                                   value: -$0.frame(in: .named("scroll")).origin.y)
+                                        })
                                 }
                                 SpendBottomView()
                             }
-                            TossBankView()
-                            TossBankView()
-                            TossBankView()
-                            
+                            GroupView()
                             VStack{
                                 HStack{
-                                    Text("금액 숨기기").foregroundColor(Color("FontColor"))
+                                    Text("금액 숨기기")
                                     Divider()
-                                    Text("자산 추가").foregroundColor(Color("FontColor"))
+                                    Text("자산 추가")
                                 }.frame(height: 20)
-                            }.frame(height: 180, alignment: .center)
+                            }.frame(height: 100, alignment: .top)
+                                .foregroundColor(Color("FontColor"))
                         }
                     }
                     .onPreferenceChange(ViewOffsetKey.self) {

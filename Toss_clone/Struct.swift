@@ -15,3 +15,30 @@ struct AssetStruct:Hashable {
     let Amount:Int
     let Goto:String
 }
+
+struct HorizentalViewStruct:Identifiable {
+    let id = UUID()
+    let Title:String
+    let Content:String
+    let CellImage:UIImage?
+    let Goto:AnyView
+}
+
+struct CellStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label.frame(width: configuration.isPressed ? UIScreen.main.bounds.size.width * 0.88 : UIScreen.main.bounds.size.width - cellPadding, height: cellHeight).background(configuration.isPressed ? Color.gray.opacity(0.3) : Color("CellColor"))
+    }
+}
+
+
+struct ListStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label.frame(width: UIScreen.main.bounds.size.width - cellPadding, height: 50).background(configuration.isPressed ? Color.gray.opacity(0.3) : Color("CellColor"))
+    }
+}
+
+struct TossBankStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label.frame(width: UIScreen.main.bounds.size.width - cellPadding, height: cellHeight).background(configuration.isPressed ? Color.gray.opacity(0.3) : Color("CellColor"))
+    }
+}

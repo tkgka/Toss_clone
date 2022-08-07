@@ -23,7 +23,7 @@ struct TossBankView: View {
         }
         .background(Color("CellColor"))
         .cornerRadius(defaultCornerRadious)
-        .buttonStyle(CellStyle())
+        .buttonStyle(TossBankStyle())
     }
 }
 

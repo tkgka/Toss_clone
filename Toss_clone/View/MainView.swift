@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Popovers
 
 
 
@@ -16,6 +16,7 @@ struct MainView: View {
     }
     @ObservedObject var ObserbData = ObsbData
     @State var SectionOffset = 0.0
+    @State var present = false
     var body: some View {
         VStack{
             NavigationView{
@@ -35,6 +36,7 @@ struct MainView: View {
                                 SpendBottomView()
                             }
                             GroupView()
+                            HorizentalScrollView()
                             VStack{
                                 HStack{
                                     Text("금액 숨기기")
@@ -61,16 +63,23 @@ struct MainView: View {
                     }
                     TabBar()
                 }
-
+                
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        HStack{
-                            Image("Logo")
-                                .renderingMode(.template)
-                                .resizable()
-                                .frame(width: 50, height: 50, alignment: .topTrailing)
-                            Text("toss").font(Font.headline.weight(.black)).frame(alignment: .leading)
-                        }.foregroundColor(.gray)
+                        Button(action:{
+                            present = true}) {
+                                HStack{
+                                    Image("Logo")
+                                        .renderingMode(.template)
+                                        .resizable()
+                                        .frame(width: 50, height: 50, alignment: .topTrailing)
+                                    Text("toss").font(Font.headline.weight(.black)).frame(alignment: .leading)
+                                }.foregroundColor(.gray)
+                            }.popover(isPresented: $present) {
+                                DescriptionView(Present: $present)
+                            }
+                        
+                        
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Image(systemName: "message.fill")
@@ -88,7 +97,7 @@ struct MainView: View {
             }
             
         }
-
+        
     }
 }
 

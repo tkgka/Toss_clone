@@ -18,7 +18,7 @@ struct AssetDetailView: View {
                 ScrollView{
                     VStack(alignment: .leading){
                         Text(Bank).font(.footnote).foregroundColor(Color.gray).underline()
-                        Text("\(Amount) 원").font(.title).foregroundColor(Color("FontColor"))
+                        Text("\(Amount) 원").font(.system(size: 28, weight: .semibold)).foregroundColor(Color("FontColor"))
                             .frame(width: UIScreen.main.bounds.size.width - 50 , alignment: .leading)
                     }.padding(.bottom, 50)
                     HStack{

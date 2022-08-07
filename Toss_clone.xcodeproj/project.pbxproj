@@ -15,6 +15,9 @@
 		F9953B69289BE8640003FAA1 /* SendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9953B68289BE8640003FAA1 /* SendView.swift */; };
 		F9953B6B289BFF470003FAA1 /* AssetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9953B6A289BFF470003FAA1 /* AssetDetailView.swift */; };
 		F9953B6D289C00E70003FAA1 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9953B6C289C00E70003FAA1 /* Struct.swift */; };
+		F9C7FFA8289F7C7100CF3CE2 /* Popovers in Frameworks */ = {isa = PBXBuildFile; productRef = F9C7FFA7289F7C7100CF3CE2 /* Popovers */; };
+		F9C7FFAA289F814C00CF3CE2 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7FFA9289F814C00CF3CE2 /* DescriptionView.swift */; };
+		F9C7FFAC289F840100CF3CE2 /* HorizentalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C7FFAB289F840100CF3CE2 /* HorizentalScrollView.swift */; };
 		F9C800FA2897F1C3000412BF /* Toss_cloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C800F92897F1C3000412BF /* Toss_cloneApp.swift */; };
 		F9C800FC2897F1C3000412BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C800FB2897F1C3000412BF /* ContentView.swift */; };
 		F9C800FE2897F1C7000412BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C800FD2897F1C7000412BF /* Assets.xcassets */; };
@@ -55,6 +58,8 @@
 		F9953B68289BE8640003FAA1 /* SendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendView.swift; sourceTree = "<group>"; };
 		F9953B6A289BFF470003FAA1 /* AssetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailView.swift; sourceTree = "<group>"; };
 		F9953B6C289C00E70003FAA1 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		F9C7FFA9289F814C00CF3CE2 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		F9C7FFAB289F840100CF3CE2 /* HorizentalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizentalScrollView.swift; sourceTree = "<group>"; };
 		F9C800F62897F1C3000412BF /* Toss_clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Toss_clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C800F92897F1C3000412BF /* Toss_cloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toss_cloneApp.swift; sourceTree = "<group>"; };
 		F9C800FB2897F1C3000412BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C7FFA8289F7C7100CF3CE2 /* Popovers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +169,8 @@
 				F95E836E289AA29200F59300 /* TabBarView.swift */,
 				F95E8366289A777200F59300 /* TapbarController.swift */,
 				F9C801252897F792000412BF /* MainView.swift */,
+				F9C7FFA9289F814C00CF3CE2 /* DescriptionView.swift */,
+				F9C7FFAB289F840100CF3CE2 /* HorizentalScrollView.swift */,
 				F9C801232897F2ED000412BF /* LaunchScreenView.swift */,
 				F9C8012A28980581000412BF /* TossBankView.swift */,
 				F95E836A289AA19B00F59300 /* SpendView.swift */,
@@ -190,6 +198,9 @@
 			dependencies = (
 			);
 			name = Toss_clone;
+			packageProductDependencies = (
+				F9C7FFA7289F7C7100CF3CE2 /* Popovers */,
+			);
 			productName = Toss_clone;
 			productReference = F9C800F62897F1C3000412BF /* Toss_clone.app */;
 			productType = "com.apple.product-type.application";
@@ -262,6 +273,9 @@
 				Base,
 			);
 			mainGroup = F9C800ED2897F1C3000412BF;
+			packageReferences = (
+				F9C7FFA6289F7C7100CF3CE2 /* XCRemoteSwiftPackageReference "Popovers" */,
+			);
 			productRefGroup = F9C800F72897F1C3000412BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -304,6 +318,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9C7FFAA289F814C00CF3CE2 /* DescriptionView.swift in Sources */,
+				F9C7FFAC289F840100CF3CE2 /* HorizentalScrollView.swift in Sources */,
 				F9C800FC2897F1C3000412BF /* ContentView.swift in Sources */,
 				F95E836F289AA29200F59300 /* TabBarView.swift in Sources */,
 				F9874391289E8CDA0088B4BF /* GroupView.swift in Sources */,
@@ -643,6 +659,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F9C7FFA6289F7C7100CF3CE2 /* XCRemoteSwiftPackageReference "Popovers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aheze/Popovers";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F9C7FFA7289F7C7100CF3CE2 /* Popovers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9C7FFA6289F7C7100CF3CE2 /* XCRemoteSwiftPackageReference "Popovers" */;
+			productName = Popovers;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F9C800EE2897F1C3000412BF /* Project object */;
 }

@@ -26,10 +26,9 @@ struct SendView: View {
                                 .frame(width: UIScreen.main.bounds.size.width - 50 , alignment: .topLeading)
                             Rectangle()
                                 .frame(height: 1)
-                                .foregroundColor(.white)
                                 .padding(.leading, 16)
                                 .padding(.trailing, 16)
-                        }
+                        }.foregroundColor(.gray)
                     }
                 }
                 .toolbar{

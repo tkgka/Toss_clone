@@ -82,8 +82,10 @@ struct Description: View{
     @State var DescInfo:DescriptionInfo
     var body: some View{
         VStack(alignment: .leading){
-            Text(DescInfo.Title).padding(.bottom, 10)
-            Text(DescInfo.Content)
+            Text(DescInfo.Title)
+                .font(.system(size: 28, weight: .semibold))
+                .padding(.bottom, 10)
+            Text(DescInfo.Content).foregroundColor(Color.gray)
         }
         .frame(height: 600,alignment: .topLeading)
         .background(Color.white)
